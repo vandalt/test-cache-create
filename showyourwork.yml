@@ -1,5 +1,5 @@
 # Enable rule caching on Zenodo?
-cache_on_zenodo: false
+cache_on_zenodo: true
 
 # Workflow graph (DAG) generation
 dag:
@@ -31,6 +31,8 @@ datasets:
 
 # Custom file dependencies
 dependencies:
+  src/scripts/test_figure.py:
+    - src/data/test_data.npz
   # src/scripts/my_script.py:
   #   - src/data/dataset_for_my_script.dat
   # src/tex/ms.tex:
@@ -45,7 +47,7 @@ optimize_caching: false
 # Overleaf sync settings
 overleaf:
   # Overleaf project ID (blank = disabled)
-  id: 
+  id:
   # Perform sync on GitHub Actions?
   gh_actions_sync: true
   # List of files to push to Overleaf
@@ -61,7 +63,7 @@ overleaf:
 require_inputs: true
 
 # Allow cacheable rules to run on GitHub Actions?
-run_cache_rules_on_ci: false
+run_cache_rules_on_ci: true
 
 # Mapping of script file extensions to instructions for executing them
 scripts:
